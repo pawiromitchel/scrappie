@@ -1,0 +1,26 @@
+{
+  "name": "scrappie",
+  "version": "1.0.0",
+  "description": "Scrape content from popular entertainment, media and news sources in Suriname with Node.js.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "chalk": "^2.3.2",
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "scripts": {
+    "star": "node scripts/starnieuws.js",
+    "dwt": "node scripts/dwtonline.js",
+    "all": "npm run star && npm run dwt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerkarso/scrappie.git"
+  },
+  "author": "Ner Karso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nerkarso/scrappie/issues"
+  },
+  "homepage": "https://github.com/nerkarso/scrappie#readme"
+}
