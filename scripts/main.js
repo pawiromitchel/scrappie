@@ -46,7 +46,7 @@ class Main {
   errorHandler(data) {
     // Write to file
     this.fs.writeFile(`errors.log`, data, (error) => {
-      console.log(chalk.red(`Something went wrong! 😱\nCheck errors.log file.\n`));
+      console.log(this.chalk.red(`Something went wrong! 😱\nCheck errors.log file.\n`));
 
       // Exit process
       process.exit(0);
