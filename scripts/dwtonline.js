@@ -26,20 +26,36 @@ class Source extends Main {
         let counter = 0;
 
         // Search HTML and collect values
-        $('ul.homelist li').first().find('li:not(.first)').each((i, element) => {
+        $('ul.homelist li').first().find('li').each((i, element) => {
 
-          // Create item object
-          items[i] = {
-            id: '',
-            title: $(element).children('a').text().split('-')[1].trim(),
-            url: self.sourceUrl + $(element).children('a').attr('href').trim(),
-            date: '',
-            author: '',
-            image: {
-              url: '',
-              alt: ''
-            },
-            content: ''
+          if ($(element).hasClass('first')) {
+            // Create item object
+            items[i] = {
+              id: '',
+              title: $(element).children('h2').children('a').text().trim(),
+              url: self.sourceUrl + $(element).children('h2').children('a').attr('href').trim(),
+              date: '',
+              author: '',
+              image: {
+                url: '',
+                alt: ''
+              },
+              content: ''
+            }
+          } else {
+            // Create item object
+            items[i] = {
+              id: '',
+              title: $(element).children('a').text().split('-')[1].trim(),
+              url: self.sourceUrl + $(element).children('a').attr('href').trim(),
+              date: '',
+              author: '',
+              image: {
+                url: '',
+                alt: ''
+              },
+              content: ''
+            }
           }
 
           // Get single item content
